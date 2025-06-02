@@ -1,0 +1,130 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "e12c999d-36db-4e3d-8d9c-3968daaeb047",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "FileNotFoundError",
+     "evalue": "[Errno 2] No such file or directory: 'usu_individual_T318.csv'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[11], line 19\u001b[0m\n\u001b[0;32m     15\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m df_filtrado[[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mITF\u001b[39m\u001b[38;5;124m'\u001b[39m, \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mCH04\u001b[39m\u001b[38;5;124m'\u001b[39m, \u001b[38;5;124m'\u001b[39m\u001b[38;5;124maño\u001b[39m\u001b[38;5;124m'\u001b[39m]]  \u001b[38;5;66;03m# CH04: sexo\u001b[39;00m\n\u001b[0;32m     17\u001b[0m \u001b[38;5;66;03m# === CARGA DE DATOS ===\u001b[39;00m\n\u001b[1;32m---> 19\u001b[0m df_2018 \u001b[38;5;241m=\u001b[39m procesar_ingresos(cargar_eph(\u001b[38;5;124m'\u001b[39m\u001b[38;5;124musu_individual_T318.csv\u001b[39m\u001b[38;5;124m'\u001b[39m), \u001b[38;5;241m2018\u001b[39m)\n\u001b[0;32m     20\u001b[0m df_2021 \u001b[38;5;241m=\u001b[39m procesar_ingresos(cargar_eph(\u001b[38;5;124m'\u001b[39m\u001b[38;5;124musu_individual_T321.csv\u001b[39m\u001b[38;5;124m'\u001b[39m), \u001b[38;5;241m2021\u001b[39m)\n\u001b[0;32m     21\u001b[0m df_2024 \u001b[38;5;241m=\u001b[39m procesar_ingresos(cargar_eph(\u001b[38;5;124m'\u001b[39m\u001b[38;5;124musu_individual_T324.csv\u001b[39m\u001b[38;5;124m'\u001b[39m), \u001b[38;5;241m2024\u001b[39m)\n",
+      "Cell \u001b[1;32mIn[11], line 9\u001b[0m, in \u001b[0;36mcargar_eph\u001b[1;34m(path_csv)\u001b[0m\n\u001b[0;32m      7\u001b[0m \u001b[38;5;28;01mdef\u001b[39;00m \u001b[38;5;21mcargar_eph\u001b[39m(path_csv):\n\u001b[0;32m      8\u001b[0m \u001b[38;5;250m    \u001b[39m\u001b[38;5;124;03m\"\"\"Carga archivo de EPH individual con codificación latina y separador ';'\"\"\"\u001b[39;00m\n\u001b[1;32m----> 9\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m pd\u001b[38;5;241m.\u001b[39mread_csv(path_csv, sep\u001b[38;5;241m=\u001b[39m\u001b[38;5;124m'\u001b[39m\u001b[38;5;124m;\u001b[39m\u001b[38;5;124m'\u001b[39m, encoding\u001b[38;5;241m=\u001b[39m\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mlatin1\u001b[39m\u001b[38;5;124m'\u001b[39m)\n",
+      "File \u001b[1;32m~\\anaconda3\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py:1026\u001b[0m, in \u001b[0;36mread_csv\u001b[1;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[0m\n\u001b[0;32m   1013\u001b[0m kwds_defaults \u001b[38;5;241m=\u001b[39m _refine_defaults_read(\n\u001b[0;32m   1014\u001b[0m     dialect,\n\u001b[0;32m   1015\u001b[0m     delimiter,\n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m   1022\u001b[0m     dtype_backend\u001b[38;5;241m=\u001b[39mdtype_backend,\n\u001b[0;32m   1023\u001b[0m )\n\u001b[0;32m   1024\u001b[0m kwds\u001b[38;5;241m.\u001b[39mupdate(kwds_defaults)\n\u001b[1;32m-> 1026\u001b[0m \u001b[38;5;28;01mreturn\u001b[39;00m _read(filepath_or_buffer, kwds)\n",
+      "File \u001b[1;32m~\\anaconda3\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py:620\u001b[0m, in \u001b[0;36m_read\u001b[1;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[0;32m    617\u001b[0m _validate_names(kwds\u001b[38;5;241m.\u001b[39mget(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mnames\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m))\n\u001b[0;32m    619\u001b[0m \u001b[38;5;66;03m# Create the parser.\u001b[39;00m\n\u001b[1;32m--> 620\u001b[0m parser \u001b[38;5;241m=\u001b[39m TextFileReader(filepath_or_buffer, \u001b[38;5;241m*\u001b[39m\u001b[38;5;241m*\u001b[39mkwds)\n\u001b[0;32m    622\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m chunksize \u001b[38;5;129;01mor\u001b[39;00m iterator:\n\u001b[0;32m    623\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m parser\n",
+      "File \u001b[1;32m~\\anaconda3\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py:1620\u001b[0m, in \u001b[0;36mTextFileReader.__init__\u001b[1;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[0;32m   1617\u001b[0m     \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39moptions[\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mhas_index_names\u001b[39m\u001b[38;5;124m\"\u001b[39m] \u001b[38;5;241m=\u001b[39m kwds[\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mhas_index_names\u001b[39m\u001b[38;5;124m\"\u001b[39m]\n\u001b[0;32m   1619\u001b[0m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mhandles: IOHandles \u001b[38;5;241m|\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m\n\u001b[1;32m-> 1620\u001b[0m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_engine \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_make_engine(f, \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mengine)\n",
+      "File \u001b[1;32m~\\anaconda3\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py:1880\u001b[0m, in \u001b[0;36mTextFileReader._make_engine\u001b[1;34m(self, f, engine)\u001b[0m\n\u001b[0;32m   1878\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mb\u001b[39m\u001b[38;5;124m\"\u001b[39m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;129;01min\u001b[39;00m mode:\n\u001b[0;32m   1879\u001b[0m         mode \u001b[38;5;241m+\u001b[39m\u001b[38;5;241m=\u001b[39m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mb\u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[1;32m-> 1880\u001b[0m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mhandles \u001b[38;5;241m=\u001b[39m get_handle(\n\u001b[0;32m   1881\u001b[0m     f,\n\u001b[0;32m   1882\u001b[0m     mode,\n\u001b[0;32m   1883\u001b[0m     encoding\u001b[38;5;241m=\u001b[39m\u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39moptions\u001b[38;5;241m.\u001b[39mget(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mencoding\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m),\n\u001b[0;32m   1884\u001b[0m     compression\u001b[38;5;241m=\u001b[39m\u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39moptions\u001b[38;5;241m.\u001b[39mget(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mcompression\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m),\n\u001b[0;32m   1885\u001b[0m     memory_map\u001b[38;5;241m=\u001b[39m\u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39moptions\u001b[38;5;241m.\u001b[39mget(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mmemory_map\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;28;01mFalse\u001b[39;00m),\n\u001b[0;32m   1886\u001b[0m     is_text\u001b[38;5;241m=\u001b[39mis_text,\n\u001b[0;32m   1887\u001b[0m     errors\u001b[38;5;241m=\u001b[39m\u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39moptions\u001b[38;5;241m.\u001b[39mget(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mencoding_errors\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mstrict\u001b[39m\u001b[38;5;124m\"\u001b[39m),\n\u001b[0;32m   1888\u001b[0m     storage_options\u001b[38;5;241m=\u001b[39m\u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39moptions\u001b[38;5;241m.\u001b[39mget(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mstorage_options\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m),\n\u001b[0;32m   1889\u001b[0m )\n\u001b[0;32m   1890\u001b[0m \u001b[38;5;28;01massert\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mhandles \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m\n\u001b[0;32m   1891\u001b[0m f \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mhandles\u001b[38;5;241m.\u001b[39mhandle\n",
+      "File \u001b[1;32m~\\anaconda3\\Lib\\site-packages\\pandas\\io\\common.py:873\u001b[0m, in \u001b[0;36mget_handle\u001b[1;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\u001b[0m\n\u001b[0;32m    868\u001b[0m \u001b[38;5;28;01melif\u001b[39;00m \u001b[38;5;28misinstance\u001b[39m(handle, \u001b[38;5;28mstr\u001b[39m):\n\u001b[0;32m    869\u001b[0m     \u001b[38;5;66;03m# Check whether the filename is to be opened in binary mode.\u001b[39;00m\n\u001b[0;32m    870\u001b[0m     \u001b[38;5;66;03m# Binary mode does not support 'encoding' and 'newline'.\u001b[39;00m\n\u001b[0;32m    871\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m ioargs\u001b[38;5;241m.\u001b[39mencoding \u001b[38;5;129;01mand\u001b[39;00m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mb\u001b[39m\u001b[38;5;124m\"\u001b[39m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;129;01min\u001b[39;00m ioargs\u001b[38;5;241m.\u001b[39mmode:\n\u001b[0;32m    872\u001b[0m         \u001b[38;5;66;03m# Encoding\u001b[39;00m\n\u001b[1;32m--> 873\u001b[0m         handle \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mopen\u001b[39m(\n\u001b[0;32m    874\u001b[0m             handle,\n\u001b[0;32m    875\u001b[0m             ioargs\u001b[38;5;241m.\u001b[39mmode,\n\u001b[0;32m    876\u001b[0m             encoding\u001b[38;5;241m=\u001b[39mioargs\u001b[38;5;241m.\u001b[39mencoding,\n\u001b[0;32m    877\u001b[0m             errors\u001b[38;5;241m=\u001b[39merrors,\n\u001b[0;32m    878\u001b[0m             newline\u001b[38;5;241m=\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124m\"\u001b[39m,\n\u001b[0;32m    879\u001b[0m         )\n\u001b[0;32m    880\u001b[0m     \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[0;32m    881\u001b[0m         \u001b[38;5;66;03m# Binary mode\u001b[39;00m\n\u001b[0;32m    882\u001b[0m         handle \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mopen\u001b[39m(handle, ioargs\u001b[38;5;241m.\u001b[39mmode)\n",
+      "\u001b[1;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'usu_individual_T318.csv'"
+     ]
+    }
+   ],
+   "source": [
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns\n",
+    "\n",
+    "# === FUNCIONES ===\n",
+    "\n",
+    "def cargar_eph(path_csv):\n",
+    "    \"\"\"Carga archivo de EPH individual con codificación latina y separador ';'\"\"\"\n",
+    "    return pd.read_csv(path_csv, sep=';', encoding='latin1')\n",
+    "\n",
+    "def procesar_ingresos(df, año):\n",
+    "    \"\"\"Filtra ingresos válidos y agrega columna de año\"\"\"\n",
+    "    df_filtrado = df[df['ITF'] > 0].copy()\n",
+    "    df_filtrado['año'] = año\n",
+    "    return df_filtrado[['ITF', 'CH04', 'año']]  # CH04: sexo\n",
+    "\n",
+    "# === CARGA DE DATOS ===\n",
+    "\n",
+    "df_2018 = procesar_ingresos(cargar_eph('usu_individual_T318.csv'), 2018)\n",
+    "df_2021 = procesar_ingresos(cargar_eph('usu_individual_T321.csv'), 2021)\n",
+    "df_2024 = procesar_ingresos(cargar_eph('usu_individual_T324.csv'), 2024)\n",
+    "\n",
+    "# === UNIÓN DE DATAFRAMES ===\n",
+    "\n",
+    "df_total = pd.concat([df_2018, df_2021, df_2024])\n",
+    "\n",
+    "# === ANÁLISIS BÁSICO ===\n",
+    "\n",
+    "print(df_total.groupby('año')['ITF'].describe())\n",
+    "\n",
+    "# === GRÁFICA: DISTRIBUCIÓN DE INGRESOS ===\n",
+    "\n",
+    "plt.figure(figsize=(12, 6))\n",
+    "sns.kdeplot(data=df_total, x='ITF', hue='año', fill=True, common_norm=False)\n",
+    "plt.xlim(0, df_total['ITF'].quantile(0.99))  # recorte del 1% superior\n",
+    "plt.title('Distribución de Ingresos Totales Familiares (ITF) - 3er Trimestre')\n",
+    "plt.xlabel('Ingreso Total Familiar (ITF)')\n",
+    "plt.ylabel('Densidad')\n",
+    "plt.grid(True)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "c4f4abda-2717-47d2-87ba-dbb3e3ece740",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Descargando desde https://www.indec.gob.ar/ftp/cuadros/sociedad/eph_usu_3t18_csv.zip...\n"
+     ]
+    },
+    {
+     "ename": "BadZipFile",
+     "evalue": "File is not a zip file",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mBadZipFile\u001b[0m                                Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[7], line 52\u001b[0m\n\u001b[0;32m     50\u001b[0m carpeta \u001b[38;5;241m=\u001b[39m \u001b[38;5;124mf\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124meph_\u001b[39m\u001b[38;5;132;01m{\u001b[39;00maño\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m\"\u001b[39m\n\u001b[0;32m     51\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m os\u001b[38;5;241m.\u001b[39mpath\u001b[38;5;241m.\u001b[39mexists(carpeta):\n\u001b[1;32m---> 52\u001b[0m     descargar_y_extraer(url, carpeta)\n\u001b[0;32m     53\u001b[0m df \u001b[38;5;241m=\u001b[39m cargar_individual(carpeta)\n\u001b[0;32m     54\u001b[0m df_proc \u001b[38;5;241m=\u001b[39m procesar_ingresos(df, año)\n",
+      "Cell \u001b[1;32mIn[7], line 24\u001b[0m, in \u001b[0;36mdescargar_y_extraer\u001b[1;34m(url, carpeta_destino)\u001b[0m\n\u001b[0;32m     22\u001b[0m r \u001b[38;5;241m=\u001b[39m requests\u001b[38;5;241m.\u001b[39mget(url)\n\u001b[0;32m     23\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m r\u001b[38;5;241m.\u001b[39mstatus_code \u001b[38;5;241m==\u001b[39m \u001b[38;5;241m200\u001b[39m:\n\u001b[1;32m---> 24\u001b[0m     z \u001b[38;5;241m=\u001b[39m zipfile\u001b[38;5;241m.\u001b[39mZipFile(io\u001b[38;5;241m.\u001b[39mBytesIO(r\u001b[38;5;241m.\u001b[39mcontent))\n\u001b[0;32m     25\u001b[0m     z\u001b[38;5;241m.\u001b[39mextractall(carpeta_destino)\n\u001b[0;32m     26\u001b[0m     \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124mf\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mArchivos extraídos en \u001b[39m\u001b[38;5;132;01m{\u001b[39;00mcarpeta_destino\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m\"\u001b[39m)\n",
+      "File \u001b[1;32m~\\anaconda3\\Lib\\zipfile\\__init__.py:1349\u001b[0m, in \u001b[0;36mZipFile.__init__\u001b[1;34m(self, file, mode, compression, allowZip64, compresslevel, strict_timestamps, metadata_encoding)\u001b[0m\n\u001b[0;32m   1347\u001b[0m \u001b[38;5;28;01mtry\u001b[39;00m:\n\u001b[0;32m   1348\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m mode \u001b[38;5;241m==\u001b[39m \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mr\u001b[39m\u001b[38;5;124m'\u001b[39m:\n\u001b[1;32m-> 1349\u001b[0m         \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_RealGetContents()\n\u001b[0;32m   1350\u001b[0m     \u001b[38;5;28;01melif\u001b[39;00m mode \u001b[38;5;129;01min\u001b[39;00m (\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mw\u001b[39m\u001b[38;5;124m'\u001b[39m, \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mx\u001b[39m\u001b[38;5;124m'\u001b[39m):\n\u001b[0;32m   1351\u001b[0m         \u001b[38;5;66;03m# set the modified flag so central directory gets written\u001b[39;00m\n\u001b[0;32m   1352\u001b[0m         \u001b[38;5;66;03m# even if no files are added to the archive\u001b[39;00m\n\u001b[0;32m   1353\u001b[0m         \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_didModify \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mTrue\u001b[39;00m\n",
+      "File \u001b[1;32m~\\anaconda3\\Lib\\zipfile\\__init__.py:1416\u001b[0m, in \u001b[0;36mZipFile._RealGetContents\u001b[1;34m(self)\u001b[0m\n\u001b[0;32m   1414\u001b[0m     \u001b[38;5;28;01mraise\u001b[39;00m BadZipFile(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mFile is not a zip file\u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[0;32m   1415\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m endrec:\n\u001b[1;32m-> 1416\u001b[0m     \u001b[38;5;28;01mraise\u001b[39;00m BadZipFile(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mFile is not a zip file\u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[0;32m   1417\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mdebug \u001b[38;5;241m>\u001b[39m \u001b[38;5;241m1\u001b[39m:\n\u001b[0;32m   1418\u001b[0m     \u001b[38;5;28mprint\u001b[39m(endrec)\n",
+      "\u001b[1;31mBadZipFile\u001b[0m: File is not a zip file"
+     ]
+    }
+   ],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "521f0b8b-b9ed-4358-a989-84767d5b4ec5",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
